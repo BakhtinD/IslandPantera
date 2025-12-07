@@ -49,8 +49,7 @@ public abstract class Animal {
     }
 
     public void decWeight() {
-        //todo
-        setWeight(getWeight() - getInitialWeight());
+        setWeight(getWeight() - getInitialWeight()/10 );
         //System.out.println(this + " похудел");
     }
 

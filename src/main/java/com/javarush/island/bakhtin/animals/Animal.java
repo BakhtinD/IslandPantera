@@ -7,21 +7,23 @@ import lombok.Data;
 @Data
 public abstract class Animal {
 
+    private static String type;
+    private static int counter;
+    //todo вес в граммы
+    private static int initialWeight;
+
     private int maxSpeed;
-    private double weight;
+    private int weight;
     private int x;
     private int y;
-    private double weightToGetFull;
-    private static String type;
+    private int weightToGetFull;
     private int step;
     private int id;
-    private static int counter;
+    private ThreadLocalRandom random = ThreadLocalRandom.current();
 
-    public double getInitialWeight() {
+    public int getInitialWeight() {
         return initialWeight;
     }
-
-    private static double initialWeight;
 
     public Animal() {
         this.id = counter++;
@@ -30,7 +32,6 @@ public abstract class Animal {
     public abstract AnimalType getType();
 
     public Point getPointToMove(int maxX, int maxY) {
-        ThreadLocalRandom random = ThreadLocalRandom.current();
         int deltaX = random.nextInt(-1, 2);
         int deltaY = random.nextInt(-1, 2);
         x = x + (deltaX * maxSpeed);
@@ -49,15 +50,15 @@ public abstract class Animal {
     }
 
     public void decWeight() {
-        setWeight(getWeight() - getInitialWeight()/10 );
+        setWeight(getWeight() - getInitialWeight()/10);
         //System.out.println(this + " похудел");
     }
 
     public void incSteps() {
-        setStep(getStep() + 1);
+        step++;
     }
 
-    public void eat(double eatenWeight) {
-        setWeight(eatenWeight + getWeight());
+    public void eat(int eatenWeight) {
+        weight += eatenWeight;
     }
 }

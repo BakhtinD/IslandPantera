@@ -21,7 +21,7 @@ public class ReproductionService {
             if (listOfAnimalsByType.size() < NumOfAnimalsInPack.getValue(animalType)) {
                 for (int i = 0; i < listOfAnimalsByType.size() / 4; i++) {
                     Animal parent = listOfAnimalsByType.get(i);
-                    parent.setWeight(parent.getWeight() / 1.25);
+                    parent.setWeight(parent.getWeight() / 2);
                     Animal animal = firstAnimal.getClass().getConstructor()
                             .newInstance();
                     cell.addAnimalsInCell(animal);

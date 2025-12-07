@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import lombok.Getter;
 
 import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 @Getter
 public class Cell {
@@ -14,7 +13,7 @@ public class Cell {
     private final int x;
     private final int y;
 
-    private List<Animal> listOfAnimalsInCell = new CopyOnWriteArrayList<>();
+    private List<Animal> listOfAnimalsInCell = new ArrayList<>();
 
     public Cell(int x, int y) {
         this.x = x;
@@ -51,7 +50,8 @@ public class Cell {
         StringBuilder resultString = new StringBuilder("[");
         for (AnimalType animalType : AnimalType.values()) {
             long countByType = getCountByType(animalType);
-            resultString.append(" ").append(animalType.toString().charAt(0)).append(animalType.toString().charAt(1)).append("=")
+            resultString.append(" ").append(animalType.toString().charAt(0))
+                    .append(animalType.toString().charAt(1)).append("=")
                     .append(countByType)
                     .append(";");
         }
@@ -59,7 +59,5 @@ public class Cell {
         return resultString.toString();
     }
 
-    public String toDebugString() {
-        return this.getX() + "," + getY() + " " + listOfAnimalsInCell.toString();
-    }
+
 }

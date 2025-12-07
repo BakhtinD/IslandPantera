@@ -8,9 +8,9 @@ public class Horse extends Animal {
 
 
     public static final AnimalType TYPE = AnimalType.HORSE;
-    public static final double initialWeight = 400;
+    public static final int initialWeight = 400000;
 
-    public double getInitialWeight(){
+    public int getInitialWeight(){
         return initialWeight;
     }
 
@@ -22,7 +22,7 @@ public class Horse extends Animal {
 
     public Horse() {
         setMaxSpeed(4);
-        setWeightToGetFull(60);
+        setWeightToGetFull(60000);
         setWeight(initialWeight);
     }
 

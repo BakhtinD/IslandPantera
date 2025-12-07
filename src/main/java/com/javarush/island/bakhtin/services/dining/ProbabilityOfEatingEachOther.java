@@ -53,11 +53,11 @@ public enum ProbabilityOfEatingEachOther {
     private final AnimalType herbivore;
 
     static int getProbability(AnimalType predator, AnimalType herbivore) {
-        if (predator.isHerbivore() && herbivore.equals(Grass.TYPE)){
+        if (predator.isHerbivore() && herbivore == Grass.TYPE){
             return 100;
         }
         for (ProbabilityOfEatingEachOther item : values()) {
-            if (item.predator.equals(predator) && item.herbivore.equals(herbivore)) {
+            if (item.predator == predator && item.herbivore == herbivore) {
                 return item.probability;
             }
         }

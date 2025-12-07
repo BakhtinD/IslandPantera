@@ -7,9 +7,9 @@ import com.javarush.island.bakhtin.animals.AnimalType;
 public class Python extends Animal {
 
     public static final AnimalType TYPE = AnimalType.PYTHON;
-    private static final double initialWeight = 15;
+    private static final int initialWeight = 15000;
 
-    public double getInitialWeight(){
+    public int getInitialWeight(){
         return initialWeight;
     }
 
@@ -21,7 +21,7 @@ public class Python extends Animal {
 
     public Python() {
         setMaxSpeed(1);
-        setWeightToGetFull(3);
+        setWeightToGetFull(3000);
         setWeight(initialWeight);
     }
 

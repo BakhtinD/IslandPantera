@@ -14,6 +14,6 @@ public class IslandMap {
     public IslandMap(int xSize, int ySize) {
         this.xSize = xSize;
         this.ySize = ySize;
-        map = new ConcurrentHashMap<>();
+        map = new ConcurrentHashMap<>(xSize*ySize);
     }
 }

@@ -5,9 +5,9 @@ import com.javarush.island.bakhtin.animals.AnimalType;
 
 public class Caterpillar extends Animal {
     public static final AnimalType TYPE = AnimalType.CATERPILLAR;
-    public static final double initialWeight = 0.01;
+    public static final int initialWeight = 10;
 
-    public double getInitialWeight(){
+    public int getInitialWeight(){
         return initialWeight;
     }
 

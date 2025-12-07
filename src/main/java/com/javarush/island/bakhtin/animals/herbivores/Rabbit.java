@@ -6,9 +6,9 @@ import com.javarush.island.bakhtin.animals.AnimalType;
 public class Rabbit extends Animal {
 
     public static final AnimalType TYPE = AnimalType.RABBIT;
-    public static final double initialWeight = 2;
+    public static final int initialWeight = 2000;
 
-    public double getInitialWeight(){
+    public int getInitialWeight(){
         return initialWeight;
     }
 
@@ -20,7 +20,7 @@ public class Rabbit extends Animal {
     public Rabbit() {
         setMaxSpeed(2);
         setWeight(initialWeight);
-        setWeightToGetFull(0.45);
+        setWeightToGetFull(450);
     }
 
 

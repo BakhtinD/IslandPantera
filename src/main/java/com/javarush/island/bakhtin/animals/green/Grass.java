@@ -6,9 +6,9 @@ import com.javarush.island.bakhtin.animals.AnimalType;
 public class Grass extends Animal {
 
     public static final AnimalType TYPE = AnimalType.GRASS;
-    public static final double initialWeight = 1;
+    public static final int initialWeight = 1000;
 
-    public double getInitialWeight(){
+    public int getInitialWeight(){
         return initialWeight;
     }
 

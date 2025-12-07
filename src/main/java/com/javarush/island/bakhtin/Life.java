@@ -18,16 +18,17 @@ public class Life {
         int xSizeOfTheMap = scanner.nextInt();
         System.out.println("Введите размер Y острова: ");
         int ySizeOfTheMap = scanner.nextInt();
+
         IslandMap islandMap = new IslandMap(xSizeOfTheMap, ySizeOfTheMap);
         IslandPreparation preparationService = new IslandPreparation();
         preparationService.spawnAnimals(islandMap);
+
         Core core = new Core(islandMap);
-        var threadPool = Executors.newScheduledThreadPool(Runtime.getRuntime().availableProcessors());
         PrinterService printerService = new PrinterService();
         printerService.printMap(islandMap);
+
+        var threadPool = Executors.newScheduledThreadPool(Runtime.getRuntime().availableProcessors());
         threadPool.scheduleAtFixedRate(core, 0, 1, TimeUnit.SECONDS);
-
-
     }
 
 

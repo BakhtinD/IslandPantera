@@ -8,9 +8,9 @@ import com.javarush.island.bakhtin.animals.AnimalType;
 public class Fox extends Animal {
 
     public static final AnimalType TYPE = FOX;
-    public static final double initialWeight = 8;
+    public static final int initialWeight = 8000;
 
-    public double getInitialWeight(){
+    public int getInitialWeight(){
         return initialWeight;
     }
 
@@ -22,7 +22,7 @@ public class Fox extends Animal {
 
     public Fox() {
         setMaxSpeed(2);
-        setWeightToGetFull(2);
+        setWeightToGetFull(2000);
         setWeight(initialWeight);
     }
 

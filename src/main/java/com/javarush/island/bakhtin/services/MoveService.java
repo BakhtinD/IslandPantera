@@ -12,29 +12,29 @@ public class MoveService {
 
     public boolean moveCell(IslandMap island, Cell startCell, int version) {
         List<Animal> listOfAnimalsByType = startCell.getListOfAnimalsInCell();
+
         if (listOfAnimalsByType == null || listOfAnimalsByType.isEmpty()) {
             return true;
         }
+
         for (Animal animal : listOfAnimalsByType) {
             if (animal.getStep() != version) {
                 continue;
             }
+
             Point whereToMove = animal.getPointToMove(island.getXSize(), island.getYSize());
             //System.out.println(island.getXSize() + " " + island.getYSize());
 
             Cell cellToMove = island.getMap().get(whereToMove);
             safeMove(startCell, cellToMove, animal);
-
-
         }
         return true;
     }
 
-
     private synchronized void safeMove(Cell start, Cell finish, Animal animal) {
         if (!start.equals(finish)) {
             //todo переделать строчку ниже
-            if (!animal.getType().equals(Grass.TYPE)) {
+            if (animal.getType() != Grass.TYPE) {
                 start.removeAnimalFromCell(animal);
             }
             finish.addAnimalsInCell(animal);

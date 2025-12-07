@@ -8,9 +8,9 @@ import com.javarush.island.bakhtin.animals.AnimalType;
 public class Duck extends Animal {
 
     public static final AnimalType TYPE = DUCK;
-    public static final double initialWeight = 1;
+    public static final int initialWeight = 1000;
 
-    public double getInitialWeight(){
+    public int getInitialWeight(){
         return initialWeight;
     }
 
@@ -22,7 +22,7 @@ public class Duck extends Animal {
 
     public Duck() {
         setMaxSpeed(4);
-        setWeightToGetFull(0.15);
+        setWeightToGetFull(150);
         setWeight(initialWeight);
     }
 

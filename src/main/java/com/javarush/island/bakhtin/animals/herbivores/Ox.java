@@ -5,9 +5,9 @@ import com.javarush.island.bakhtin.animals.AnimalType;
 
 public class Ox extends Animal {
     public static final AnimalType TYPE = AnimalType.OX;
-    public static final double initialWeight = 700;
+    public static final int initialWeight = 700000;
 
-    public double getInitialWeight(){
+    public int getInitialWeight(){
         return initialWeight;
     }
 
@@ -19,6 +19,6 @@ public class Ox extends Animal {
     public Ox() {
         setMaxSpeed(3);
         setWeight(initialWeight);
-        setWeightToGetFull(100);
+        setWeightToGetFull(100000);
     }
 }

@@ -15,10 +15,9 @@ public class IslandPreparation {
 
     @SneakyThrows
     protected void spawnAnimals(IslandMap island) {
-        for (int i = 0; i < island.getXSize(); i++) {
-            for (int j = 0; j < island.getYSize(); j++) {
-                Cell cell = new Cell(i, j);
-//                AnimalType randomAnimal = AnimalType.getRandomType();
+        for (int x = 0; x < island.getXSize(); x++) {
+            for (int y = 0; y < island.getYSize(); y++) {
+                Cell cell = new Cell(x, y);
                 for (AnimalType animal : AnimalType.values()) {
                     if (ThreadLocalRandom.current().nextBoolean() || animal.equals(Grass.TYPE)) {
                         int numOfAnimalsInPack = NumOfAnimalsInPack.getValue(
@@ -29,10 +28,12 @@ public class IslandPreparation {
                                 numOfAnimalAtTheEnd);
                         for (Animal realAnimals : list) {
                             cell.addAnimalsInCell(realAnimals);
+                            realAnimals.setX(x);
+                            realAnimals.setY(y);
                         }
                     }
                 }
-                island.getMap().put(new Point(i, j), cell);
+                island.getMap().put(new Point(x, y), cell);
             }
         }
     }

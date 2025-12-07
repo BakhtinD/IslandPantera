@@ -42,6 +42,7 @@ public class Core extends Thread {
             eS.invokeAll(diningTasks);
             eS.invokeAll(dyingTasks);
             eS.invokeAll(reproductionTasks);
+
             v = v + 1;
             mapPrinter.printMap(map);
             System.out.println("Начался новый день");

@@ -30,7 +30,7 @@ public class ReproductionService {
                     animal.setY(firstAnimal.getY());
                     animal.setWeight(firstAnimal.getWeight() / 2);
                     animal.setWeightToGetFull(firstAnimal.getWeightToGetFull());
-                    System.out.println(animal + " родился");
+                    //System.out.println(animal + " родился");
                 }
             }
         }

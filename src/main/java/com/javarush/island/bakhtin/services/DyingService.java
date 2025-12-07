@@ -10,9 +10,9 @@ public class DyingService {
             if (animal.getWeight() <= animal.getInitialWeight()/5) {
                 //System.out.println(animal + " умер от истощения");
                 cell.removeAnimalFromCell(animal);
-            } else {
-                System.out.println(animal);
-                System.out.println(animal.getWeight());
+            //} else {
+                //System.out.println(animal);
+                //System.out.println(animal.getWeight());
             }
         }
         return true;

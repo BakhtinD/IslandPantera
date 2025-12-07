@@ -33,8 +33,8 @@ public abstract class Animal {
         ThreadLocalRandom random = ThreadLocalRandom.current();
         int deltaX = random.nextInt(-1, 2);
         int deltaY = random.nextInt(-1, 2);
-        x = x + deltaX * maxSpeed;
-        y = y + deltaY * maxSpeed;
+        x = x + (deltaX * maxSpeed);
+        y = y + (deltaY * maxSpeed);
         if (x < 0) {
             x = 0;
         } else if (x >= maxX) {

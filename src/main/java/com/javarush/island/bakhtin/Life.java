@@ -14,7 +14,9 @@ public class Life {
     @SneakyThrows
     public void start() {
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите размер X острова:");
         int xSizeOfTheMap = scanner.nextInt();
+        System.out.println("Введите размер Y острова: ");
         int ySizeOfTheMap = scanner.nextInt();
         IslandMap islandMap = new IslandMap(xSizeOfTheMap, ySizeOfTheMap);
         IslandPreparation preparationService = new IslandPreparation();

@@ -20,6 +20,7 @@ public class MoveService {
                 continue;
             }
             Point whereToMove = animal.getPointToMove(island.getXSize(), island.getYSize());
+            //System.out.println(island.getXSize() + " " + island.getYSize());
 
             Cell cellToMove = island.getMap().get(whereToMove);
             safeMove(startCell, cellToMove, animal);
@@ -37,13 +38,13 @@ public class MoveService {
                 start.removeAnimalFromCell(animal);
             }
             finish.addAnimalsInCell(animal);
-            /*
+/*
             System.out.println(animal + " перешел из " + start.getX() + "_" + start.getY() + " в "
                     + finish.getX() + "_" + finish.getY());
         } else {
             System.out.println("Прыжок на месте в координатах:" + start.getX() + ", " + start.getY()
                     + " выполненый " + animal);
-             */
+*/
         }
 
         animal.decWeight();

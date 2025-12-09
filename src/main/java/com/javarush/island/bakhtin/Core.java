@@ -37,42 +37,22 @@ public class Core extends Thread {
                     reproductionTasks.add(() -> reproductionService.reproduce(cell));
                 }
             }
-            System.out.println("t1, ms: " + (System.currentTimeMillis() - t));
+            
             es.invokeAll(moveTasks);
-            System.out.println("t2, ms: " + (System.currentTimeMillis() - t));
             es.invokeAll(diningTasks);
-            System.out.println("t3, ms: " + (System.currentTimeMillis() - t));
             es.invokeAll(dyingTasks);
-            System.out.println("t4, ms: " + (System.currentTimeMillis() - t));
             es.invokeAll(reproductionTasks);
-            System.out.println("t5, ms: " + (System.currentTimeMillis() - t));
-
+            
             v = v + 1;
+            
             mapPrinter.printMap(map);
-            System.out.println("t6, ms: " + (System.currentTimeMillis() - t));
+            
             System.out.println("Начался новый день");
+            
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-/*
-        t1, ms: 0
-        t2, ms: 765
-        t3, ms: 2272
-        t4, ms: 2312
-        t1, ms: 0
-        t2, ms: 855
-        t3, ms: 4010
-        t4, ms: 4031
-        t1, ms: 0
-        t2, ms: 786
-        t3, ms: 1027
-        t4, ms: 1054
-        t1, ms: 9
-        t2, ms: 724
-        t3, ms: 917
-        t4, ms: 952
-        t5, ms: 1153
-*/
+
 
     }
 }
